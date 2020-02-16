@@ -7,12 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuTileComponent } from './menu/menu-tile/menu-tile.component';
 import { MenuContainerComponent } from './menu/menu-container/menu-container.component';
+import { DesktopComponent } from './desktop/desktop.component';
+import { TopNavigationComponent } from './top-navigation/top-navigation.component';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuTileComponent,
-    MenuContainerComponent
+    MenuContainerComponent,
+    DesktopComponent,
+    TopNavigationComponent,
+    NavigationMenuComponent
   ],
   imports: [
     BrowserModule,

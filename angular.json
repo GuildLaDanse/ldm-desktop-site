@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ldm-desktop-site": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ldm-desktop-site"
+    }
+  },
+  "defaultProject": "ldm-desktop-site",
+  "cli": {
+    "analytics": "42c5b59a-75e6-4abc-affd-1c2b6da7b972"
+  }
 }

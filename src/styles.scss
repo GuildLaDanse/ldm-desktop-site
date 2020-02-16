@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+body
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wow-background
+{
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    background-image: url('/assets/images/wallpaper-battleforazeroth-85.jpg');
+}
+
+.flex-push-right
+{
+    margin-left: auto;
+}
+
+/* Utility class to have a link not look like a link and instead inherit from parent */
+.inherit-link
+{
+    color: inherit;
+    text-decoration: inherit;
+}
+   
