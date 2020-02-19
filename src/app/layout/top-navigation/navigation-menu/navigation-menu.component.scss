@@ -1,0 +1,15 @@
+span.menu-link {
+  color: white;
+  font-size: 1.0em;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+span.menu-link:first-child {
+  margin-left: 0;
+}
+
+.menu-toggle-icon
+{
+  color: lightgray;
+}

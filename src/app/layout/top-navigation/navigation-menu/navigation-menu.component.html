@@ -1,1 +1,10 @@
-<p>navigation-menu works!</p>
+<span class="menu-link">Support</span>
+
+<span class="menu-link" (click)="menuToggled()">My Account <fa-icon [icon]="menuToggleIcon" class="menu-toggle-icon"></fa-icon></span>
+
+<!--
+<header>
+  <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+  <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+</header>
+-->

@@ -10,6 +10,7 @@ import { MenuContainerComponent } from './menu/menu-container/menu-container.com
 import { DesktopComponent } from './layout/desktop/desktop.component';
 import { TopNavigationBarComponent } from './layout/top-navigation/top-navigation-bar/top-navigation-bar.component';
 import { NavigationMenuComponent } from './layout/top-navigation/navigation-menu/navigation-menu.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavigationMenuComponent } from './layout/top-navigation/navigation-menu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

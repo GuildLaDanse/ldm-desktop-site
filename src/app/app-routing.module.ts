@@ -4,7 +4,7 @@ import { DesktopComponent } from './layout/desktop/desktop.component';
 
 
 const routes: Routes = [
-  { path: 'desktop', component: DesktopComponent },
+  { path: '', component: DesktopComponent },
 ];
 
 @NgModule({
