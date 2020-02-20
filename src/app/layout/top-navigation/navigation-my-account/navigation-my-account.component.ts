@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AuthService } from '../../../auth.service';
 import {faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons';
+import {AuthService} from '../../../auth.service';
 
 @Component({
-  selector: 'app-navigation-menu',
-  templateUrl: './navigation-menu.component.html',
-  styleUrls: ['./navigation-menu.component.scss']
+  selector: 'app-navigation-my-account',
+  templateUrl: './navigation-my-account.component.html',
+  styleUrls: ['./navigation-my-account.component.scss']
 })
-export class NavigationMenuComponent implements OnInit {
+export class NavigationMyAccountComponent implements OnInit {
 
   menuOpen = false;
   menuToggleIcon = faAngleDown;

@@ -11,6 +11,8 @@ import { TopNavigationBarComponent } from './layout/top-navigation/top-navigatio
 import { NavigationMenuComponent } from './layout/top-navigation/navigation-menu/navigation-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
+import { NavigationMenuLinkComponent } from './layout/top-navigation/navigation-menu-link/navigation-menu-link.component';
+import { NavigationMyAccountComponent } from './layout/top-navigation/navigation-my-account/navigation-my-account.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HomeComponent } from './home/home.component';
     MenuContainerComponent,
     TopNavigationBarComponent,
     NavigationMenuComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationMenuLinkComponent,
+    NavigationMyAccountComponent
   ],
   imports: [
     BrowserModule,

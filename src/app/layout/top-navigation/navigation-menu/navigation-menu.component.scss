@@ -1,15 +1,11 @@
-span.menu-link {
+div.menu-item {
   color: white;
   font-size: 1.0em;
-  margin-left: 25px;
   cursor: pointer;
+  height: 100%;
+  display: inline-block;
 }
 
-span.menu-link:first-child {
+div.menu-item:first-child {
   margin-left: 0;
-}
-
-.menu-toggle-icon
-{
-  color: lightgray;
 }

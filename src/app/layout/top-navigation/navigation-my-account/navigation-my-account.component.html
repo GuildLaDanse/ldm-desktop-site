@@ -1,0 +1,12 @@
+<div ngbDropdown>
+  <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="myAccountDropdown" role="button">
+    My Account
+  </a>
+  <div ngbDropdownMenu aria-labelledby="myAccountDropdown" class="dropdown-menu">
+    <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
+    <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
+    <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
+    <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+    <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+  </div>
+</div>

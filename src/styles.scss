@@ -1,12 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "~bootstrap/dist/css/bootstrap.css";
+
 body
 {
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
-    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .wow-background
@@ -30,4 +29,10 @@ body
     color: inherit;
     text-decoration: inherit;
 }
-   
+
+.inherit-link:hover
+{
+  color: inherit;
+  text-decoration: inherit;
+}
+
