@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../../../auth.service';
+import { AuthService } from '../../../services/auth/auth.service';
 import {faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
