@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons';
-import {AuthService} from '../../../auth.service';
+import { AuthService } from '../../../auth.service';
 
 @Component({
   selector: 'app-navigation-my-account',
@@ -9,21 +8,21 @@ import {AuthService} from '../../../auth.service';
 })
 export class NavigationMyAccountComponent implements OnInit {
 
-  menuOpen = false;
-  menuToggleIcon = faAngleDown;
+  username = '<test>';
 
   constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
+    this.auth.isAuthenticated$.subscribe(
+      res => this.updateMenu(res as boolean)
+    );
   }
 
-  menuToggled() {
-    this.menuOpen = !this.menuOpen;
-
-    if (this.menuOpen) {
-      this.menuToggleIcon = faAngleUp;
-    } else {
-      this.menuToggleIcon = faAngleDown;
+  updateMenu(isAuthenticated: boolean) {
+    if (isAuthenticated) {
+      this.auth.getUser$().subscribe(
+        result => this.username = result.nickname
+      );
     }
   }
 }

@@ -13,6 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
 import { NavigationMenuLinkComponent } from './layout/top-navigation/navigation-menu-link/navigation-menu-link.component';
 import { NavigationMyAccountComponent } from './layout/top-navigation/navigation-my-account/navigation-my-account.component';
+import { MenuPageComponent } from './menu/pages/menu-page/menu-page.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NavigationMyAccountComponent } from './layout/top-navigation/navigation
     NavigationMenuComponent,
     HomeComponent,
     NavigationMenuLinkComponent,
-    NavigationMyAccountComponent
+    NavigationMyAccountComponent,
+    MenuPageComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

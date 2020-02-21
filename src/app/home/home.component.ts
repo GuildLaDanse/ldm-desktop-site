@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  isAuthenticated: boolean = null;
+
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.auth.isAuthenticated$.subscribe(
+      res => {
+        if (res !== this.isAuthenticated) {
+          this.isAuthenticated = res as boolean;
+          this.redirectOnAuthenticationChange();
+        }
+      }
+    );
   }
 
+  redirectOnAuthenticationChange(): void {
+    if (this.isAuthenticated) {
+      console.log('is logged in');
+      this.router.navigate(['./menu']);
+    } else {
+      console.log('is not logged in');
+      this.router.navigate(['./welcome']);
+    }
+  }
 }
