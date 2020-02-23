@@ -1,0 +1,10 @@
+{
+  "api": {
+    "baseUrl": "http://localhost:8000"
+  },
+  "auth0": {
+    "domain": "<your Auth0 domain>",
+    "clientId": "<client id>",
+    "audience": "<audience>"
+  }
+}
