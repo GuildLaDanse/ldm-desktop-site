@@ -1,0 +1,21 @@
+<h2>OAuth Token Debug</h2>
+
+<h4>Authenticated</h4>
+
+<div>{{ isAuthenticated }}</div>
+
+<button class="btn btn-info" (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+<button class="btn btn-info" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+
+<h4>User Profile</h4>
+
+<pre [innerHTML]="userProfile | json"></pre>
+
+<h4>Auth0 Client</h4>
+
+<pre [innerHTML]="auth0Client | json"></pre>
+
+
+
+
+

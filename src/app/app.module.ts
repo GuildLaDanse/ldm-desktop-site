@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -15,6 +15,9 @@ import { NavigationMenuLinkComponent } from './layout/top-nav-bar/nav-menu/menu-
 import { NavigationMyAccountComponent } from './layout/top-nav-bar/nav-menu/my-account/navigation-my-account.component';
 import { MenuPageComponent } from './modules/menu/pages/menu-page/menu-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {ConfigService, loadConfig} from './services/config/config-service';
+import {DebugModule} from './modules/debug/debug.module';
 
 @NgModule({
   declarations: [
@@ -33,9 +36,21 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    DebugModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: loadConfig,
+      deps: [
+        HttpClient,
+        ConfigService
+      ],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@
   <div ngbDropdownMenu aria-labelledby="myAccountDropdown" class="dropdown-menu">
     <a ngbDropdownItem href="#" (click)="$event.preventDefault()">{{ username }}</a>
     <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
-    <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
+    <a ngbDropdownItem routerLink="debug/token">Debug</a>
     <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
     <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
   </div>
