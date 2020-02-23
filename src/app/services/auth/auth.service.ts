@@ -4,11 +4,7 @@ import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import {ConfigService} from '../config/config-service';
-
-const AUTH0_DOMAIN = 'ladanse.eu.auth0.com';
-const AUTH0_CLIENT_ID = '4R71ILa01rQgbOGs5eeVr7MQhJKA2lTF';
-const AUTH0_AUDIENCE = 'https://ladanse.org/backend/api';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +13,10 @@ export class AuthService {
   // Create an observable of Auth0 instance of client
   auth0Client$ = (from(
     createAuth0Client({
-      domain: this.config.auth0.domain,
-      client_id: this.config.auth0.clientId,
+      domain: environment.auth0.domain,
+      client_id: environment.auth0.clientId,
       redirect_uri: `${window.location.origin}`,
-      audience: this.config.auth0.audience
+      audience: environment.auth0.audience
     })
   ) as Observable<Auth0Client>).pipe(
     shareReplay(1), // Every subscription receives the same shared value
@@ -43,7 +39,7 @@ export class AuthService {
   // Create a local property for login status
   loggedIn: boolean = null;
 
-  constructor(private router: Router, private config: ConfigService) {
+  constructor(private router: Router) {
     // On initial load, check authentication state with authorization server
     // Set up local auth streams if user is already authenticated
     this.localAuthSetup();
@@ -57,6 +53,12 @@ export class AuthService {
     return this.auth0Client$.pipe(
       concatMap((client: Auth0Client) => from(client.getUser(options))),
       tap(user => this.userProfileSubject$.next(user))
+    );
+  }
+
+  getTokenSilently$(options?): Observable<string> {
+    return this.auth0Client$.pipe(
+      concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
     );
   }
 

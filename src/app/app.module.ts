@@ -15,9 +15,10 @@ import { NavigationMenuLinkComponent } from './layout/top-nav-bar/nav-menu/menu-
 import { NavigationMyAccountComponent } from './layout/top-nav-bar/nav-menu/my-account/navigation-my-account.component';
 import { MenuPageComponent } from './modules/menu/pages/menu-page/menu-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {ConfigService, loadConfig} from './services/config/config-service';
 import {DebugModule} from './modules/debug/debug.module';
+import {Auth0HttpInterceptor} from './infrastructure/Auth0HttpInterceptor';
 
 @NgModule({
   declarations: [
@@ -35,22 +36,12 @@ import {DebugModule} from './modules/debug/debug.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule,
     DebugModule
   ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: loadConfig,
-      deps: [
-        HttpClient,
-        ConfigService
-      ],
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

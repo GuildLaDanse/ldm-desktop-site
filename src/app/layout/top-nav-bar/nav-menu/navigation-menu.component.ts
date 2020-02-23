@@ -13,7 +13,7 @@ export class NavigationMenuComponent implements OnInit {
   menuOpen = false;
   menuToggleIcon = faAngleDown;
 
-  constructor(public auth: AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
