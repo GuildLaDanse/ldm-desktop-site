@@ -16,9 +16,7 @@ import { NavigationMyAccountComponent } from './layout/top-nav-bar/nav-menu/my-a
 import { MenuPageComponent } from './modules/menu/pages/menu-page/menu-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {ConfigService, loadConfig} from './services/config/config-service';
 import {DebugModule} from './modules/debug/debug.module';
-import {Auth0HttpInterceptor} from './infrastructure/Auth0HttpInterceptor';
 
 @NgModule({
   declarations: [
