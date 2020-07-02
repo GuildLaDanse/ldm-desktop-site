@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -15,8 +15,9 @@ import { NavigationMenuLinkComponent } from './layout/top-nav-bar/nav-menu/menu-
 import { NavigationMyAccountComponent } from './layout/top-nav-bar/nav-menu/my-account/navigation-my-account.component';
 import { MenuPageComponent } from './modules/menu/pages/menu-page/menu-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {DebugModule} from './modules/debug/debug.module';
+import { HttpClientModule } from '@angular/common/http';
+import { DebugModule } from './modules/debug/debug.module';
+import { StartMenuModule } from './modules/start-menu/start-menu.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {DebugModule} from './modules/debug/debug.module';
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
-    DebugModule
+    DebugModule,
+    StartMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
