@@ -1,19 +1,17 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-menu-tile',
-  templateUrl: './menu-tile.component.html',
-  styleUrls: ['./menu-tile.component.scss']
+  selector: 'app-menu-tile-icon-content',
+  templateUrl: './menu-tile-icon-content.component.html',
+  styleUrls: ['./menu-tile-icon-content.component.scss']
 })
-export class MenuTileComponent implements OnInit {
-
-  @Input() size = 'single';
-  @Input() label = '';
+export class MenuTileIconContentComponent implements OnInit {
 
   @Input() iconStyle: string = null;
   @Input() icon: string = null;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -50,5 +48,4 @@ export class MenuTileComponent implements OnInit {
 
     return cssClass;
   }
-
 }

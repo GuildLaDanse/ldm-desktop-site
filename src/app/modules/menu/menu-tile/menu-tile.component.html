@@ -1,1 +1,24 @@
-<p>menu-tile works!</p>
+<li class="tile"
+    [class.tile-single]="size == 'single'"
+    [class.tile-wide]="size == 'wide'">
+
+  <div class="tile-content">
+    <ng-content></ng-content>
+  </div>
+
+  <div *ngIf="icon == null"
+       class="tile-label tile-text-label">
+
+    <span *ngIf="icon == null">{{ label }}</span>
+
+  </div>
+
+  <div *ngIf="icon != null"
+       class="tile-label tile-icon-label">
+
+    <i *ngIf="icon != null"
+       class="{{ cssIconStyle() }} {{ icon }} fa-2x"></i>
+
+  </div>
+
+</li>

@@ -1,0 +1,57 @@
+.tile
+{
+  margin: 10px;
+  text-align: center;
+  background-color: rgba(75, 75, 75, .6);
+  color: rgb(250, 250, 250);
+  position: relative;
+}
+
+.tile:hover
+{
+  background-color: rgba(75, 75, 75, .85);
+  disabled-outline: #999999 solid 2px;
+}
+
+.tile-single
+{
+  width: 150px;
+  height: 150px;
+}
+
+.tile-wide
+{
+  width: 320px;
+  height: 150px;
+}
+
+.tile-content
+{
+  padding: 5px 5px 35px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile-label
+{
+  position: absolute;
+}
+
+.tile-text-label
+{
+  left: 8px;
+  bottom: 5px;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.tile-icon-label
+{
+  font-size: 0.75em;
+  left: 8px;
+  bottom: 8px;
+}

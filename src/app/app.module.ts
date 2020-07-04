@@ -15,8 +15,12 @@ import { NavigationMenuLinkComponent } from './layout/top-nav-bar/nav-menu/menu-
 import { NavigationMyAccountComponent } from './layout/top-nav-bar/nav-menu/my-account/navigation-my-account.component';
 import { MenuPageComponent } from './modules/menu/pages/menu-page/menu-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {DebugModule} from './modules/debug/debug.module';
+import { HttpClientModule } from '@angular/common/http';
+import { DebugModule } from './modules/debug/debug.module';
+import { MenuNewsComponent } from './modules/menu/menu-news/menu-news.component';
+import { MenuColumnComponent } from './modules/menu/menu-column/menu-column.component';
+import { MenuTileIconContentComponent } from './modules/menu/menu-tile-icon-content/menu-tile-icon-content.component';
+import { MenuTileImageContentComponent } from './modules/menu/menu-tile-image-content/menu-tile-image-content.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import {DebugModule} from './modules/debug/debug.module';
     NavigationMenuLinkComponent,
     NavigationMyAccountComponent,
     MenuPageComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    MenuNewsComponent,
+    MenuColumnComponent,
+    MenuTileIconContentComponent,
+    MenuTileImageContentComponent
   ],
   imports: [
     BrowserModule,
