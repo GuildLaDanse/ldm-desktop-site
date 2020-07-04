@@ -45,8 +45,7 @@ import { MenuTileImageContentComponent } from './modules/menu/menu-tile-image-co
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
-    DebugModule,
-    StartMenuModule
+    DebugModule
   ],
   providers: [],
   bootstrap: [AppComponent]
