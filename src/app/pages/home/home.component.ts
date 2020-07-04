@@ -28,9 +28,11 @@ export class HomeComponent implements OnInit {
   redirectOnAuthenticationChange(): void {
     if (this.isAuthenticated) {
       console.log('is logged in');
+      // noinspection JSIgnoredPromiseFromCall
       this.router.navigate(['./menu']);
     } else {
       console.log('is not logged in');
+      // noinspection JSIgnoredPromiseFromCall
       this.router.navigate(['./welcome']);
     }
   }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -45,7 +45,8 @@ import { MenuTileImageContentComponent } from './modules/menu/menu-tile-image-co
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
-    DebugModule
+    DebugModule,
+    StartMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
