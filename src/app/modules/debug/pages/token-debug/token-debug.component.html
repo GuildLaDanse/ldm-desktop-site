@@ -1,11 +1,10 @@
+<div class="temporary-page">
+
 <h2>OAuth Token Debug</h2>
 
 <h4>Authenticated</h4>
 
-<div>{{ isAuthenticated }}</div>
-
-<button class="btn btn-info" (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
-<button class="btn btn-info" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+<p>{{ isAuthenticated }}</p>
 
 <h4>User Profile</h4>
 
@@ -15,7 +14,4 @@
 
 <pre [innerHTML]="auth0Client | json"></pre>
 
-
-
-
-
+</div>>
