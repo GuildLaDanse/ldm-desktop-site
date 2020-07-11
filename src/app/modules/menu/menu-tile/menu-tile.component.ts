@@ -13,7 +13,8 @@ export class MenuTileComponent implements OnInit {
   @Input() iconStyle: string = null;
   @Input() icon: string = null;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

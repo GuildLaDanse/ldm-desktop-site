@@ -9,7 +9,8 @@ export class MenuTileImageContentComponent implements OnInit {
 
   @Input() imageUrl = '';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

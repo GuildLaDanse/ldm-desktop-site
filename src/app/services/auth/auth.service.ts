@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
-import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
-import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import {BehaviorSubject, combineLatest, from, Observable, of, throwError} from 'rxjs';
+import {catchError, concatMap, shareReplay, tap} from 'rxjs/operators';
+import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
+import {Logger} from '../../infrastructure/logger';
 
 @Injectable({
   providedIn: 'root'
@@ -95,7 +96,7 @@ export class AuthService {
       // noinspection JSIgnoredPromiseFromCall
       client.loginWithRedirect({
         redirect_uri: `${window.location.origin}`,
-        appState: { target: redirectPath }
+        appState: {target: redirectPath}
       });
     });
   }
@@ -123,7 +124,8 @@ export class AuthService {
       // Response will be an array of user and login status
       authComplete$.subscribe(([user, loggedIn]) => {
         // Redirect to target route after callback processing
-        console.log('(AuthService) redirecting user to ' + targetRoute);
+        Logger.debug('AuthService', 'handleAuthCallback', 'login finished, routing to ' + targetRoute);
+
         // noinspection JSIgnoredPromiseFromCall
         this.router.navigate([targetRoute]);
       });

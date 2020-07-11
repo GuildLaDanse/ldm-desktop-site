@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 
-import { AuthService } from '../../../services/auth/auth.service';
+import {AuthService} from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -13,7 +13,8 @@ export class NavigationMenuComponent implements OnInit, OnDestroy {
 
   public username = null;
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService) {
+  }
 
   ngOnInit(): void {
     this.auth.authState$.subscribe(

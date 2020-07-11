@@ -2,42 +2,36 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
 
-body
-{
-    width: 100%;
-    height: 100%;
+body {
+  width: 100%;
+  height: 100%;
 }
 
-.wow-background
-{
-    background-color: white;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top;
-    background-size: cover;
-    background-image: url('/assets/images/wallpapers/wallpaper-shadowlands-01.jpg');
+.wow-background {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+  background-image: url('/assets/images/wallpapers/wallpaper-shadowlands-01.jpg');
 }
 
-.flex-push-right
-{
-    margin-left: auto;
+.flex-push-right {
+  margin-left: auto;
 }
 
 /* Utility class to have a link not look like a link and instead inherit from parent */
-.inherit-link
-{
-    color: inherit;
-    text-decoration: inherit;
-}
-
-.inherit-link:hover
-{
+.inherit-link {
   color: inherit;
   text-decoration: inherit;
 }
 
-div.temporary-page
-{
+.inherit-link:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+div.temporary-page {
   width: 980px;
   margin: auto;
   margin-top: 50px;

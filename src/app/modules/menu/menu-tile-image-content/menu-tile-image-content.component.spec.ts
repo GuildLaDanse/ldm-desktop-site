@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MenuTileImageContentComponent } from './menu-tile-image-content.component';
+import {MenuTileImageContentComponent} from './menu-tile-image-content.component';
 
 describe('MenuTileImageContentComponent', () => {
   let component: MenuTileImageContentComponent;
@@ -8,9 +8,9 @@ describe('MenuTileImageContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuTileImageContentComponent ]
+      declarations: [MenuTileImageContentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

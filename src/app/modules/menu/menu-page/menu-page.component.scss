@@ -1,18 +1,15 @@
-div.page-container
-{
+div.page-container {
   width: 100%;
   margin: 50px auto auto;
   position: relative;
 }
 
-div.menu-container
-{
+div.menu-container {
   width: max-content;
   margin: auto;
 }
 
-div.menu-columns-container
-{
+div.menu-columns-container {
   white-space: nowrap;
   position: relative;
   display: -webkit-box;
@@ -26,13 +23,11 @@ div.menu-columns-container
 
 }
 
-div.menu-news-column
-{
+div.menu-news-column {
   width: 400px;
 }
 
-div.news-column-wrapper
-{
+div.news-column-wrapper {
   padding: 5px;
   margin: 10px;
 }

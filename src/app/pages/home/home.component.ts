@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../services/auth/auth.service';
+import {Logger} from '../../infrastructure/logger';
 
 @Component({
   selector: 'app-home',
@@ -23,27 +24,34 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.authStateSubscription) { this.authStateSubscription.unsubscribe(); }
+    if (this.authStateSubscription) {
+      this.authStateSubscription.unsubscribe();
+    }
   }
 
   async handleAuthenticationChange(authState: boolean): Promise<any> {
 
-    if (authState === null) { return; }
+    if (authState === null) {
+      return;
+    }
 
     this.loggedIn = authState;
 
-    console.log('(HomeComponent) this.auth.loggedIn - ' + this.auth.loggedIn);
-    if (this.auth.loggedIn) {
-      console.log('(HomeComponent) is logged in, redirecting to /menu');
+    Logger.debug('HomeComponent', 'handleAuthenticationChange', 'logged in state is ' + this.auth.loggedIn);
 
-      if (this.authStateSubscription) { this.authStateSubscription.unsubscribe(); }
+    if (this.auth.loggedIn) {
+      Logger.debug('HomeComponent', 'handleAuthenticationChange', 'is logged in, redirecting to /menu');
+
+      if (this.authStateSubscription) {
+        this.authStateSubscription.unsubscribe();
+      }
 
       const that = this;
 
       // noinspection JSIgnoredPromiseFromCall
       setTimeout(() => that.router.navigate(['/menu']), 50);
     } else {
-      console.log('(HomeComponent) is not logged in, staying on current page');
+      Logger.debug('HomeComponent', 'handleAuthenticationChange', 'is not logged in, staying on current page\'');
     }
   }
 }

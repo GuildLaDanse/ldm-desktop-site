@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MenuTileIconContentComponent } from './menu-tile-icon-content.component';
+import {MenuTileIconContentComponent} from './menu-tile-icon-content.component';
 
 describe('MenuTileIconContentComponent', () => {
   let component: MenuTileIconContentComponent;
@@ -8,9 +8,9 @@ describe('MenuTileIconContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuTileIconContentComponent ]
+      declarations: [MenuTileIconContentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

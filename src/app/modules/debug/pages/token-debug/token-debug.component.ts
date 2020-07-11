@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../../../services/auth/auth.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class TokenDebugComponent implements OnInit {
   public userProfile = null;
   public auth0Client = null;
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService) {
+  }
 
   ngOnInit(): void {
     this.auth.isAuthenticated$.subscribe(

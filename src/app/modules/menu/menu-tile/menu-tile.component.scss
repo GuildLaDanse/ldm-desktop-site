@@ -1,5 +1,4 @@
-.tile
-{
+.tile {
   margin: 10px;
   text-align: center;
   background-color: rgba(75, 75, 75, .6);
@@ -7,26 +6,22 @@
   position: relative;
 }
 
-.tile:hover
-{
+.tile:hover {
   background-color: rgba(75, 75, 75, .85);
   disabled-outline: #999999 solid 2px;
 }
 
-.tile-single
-{
+.tile-single {
   width: 150px;
   height: 150px;
 }
 
-.tile-wide
-{
+.tile-wide {
   width: 320px;
   height: 150px;
 }
 
-.tile-content
-{
+.tile-content {
   padding: 5px 5px 35px;
   position: absolute;
   width: 100%;
@@ -36,21 +31,18 @@
   align-items: center;
 }
 
-.tile-label
-{
+.tile-label {
   position: absolute;
 }
 
-.tile-text-label
-{
+.tile-text-label {
   left: 8px;
   bottom: 5px;
   font-size: 0.9em;
   font-weight: 300;
 }
 
-.tile-icon-label
-{
+.tile-icon-label {
   font-size: 0.75em;
   left: 8px;
   bottom: 8px;

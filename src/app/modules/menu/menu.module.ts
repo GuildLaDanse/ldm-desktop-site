@@ -17,12 +17,11 @@ import {RouterModule} from '@angular/router';
     MenuTileComponent,
     MenuPageComponent
   ],
-    imports: [
-        CommonModule,
-        RouterModule
-    ],
-  exports: [
-  ]
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
+  exports: []
 })
 export class MenuModule {
 }
