@@ -1,11 +1,12 @@
-<div class="menu-item">
-  <span *ngIf="auth.loggedIn">
-    Welcome {{ username }}
-  </span>
-
+<div class="menu-item" *ngIf="!auth.loggedIn">
+  <i>If it's not fun then don't do it!</i>
 </div>
 
-<div class="menu-item">
+<div class="menu-item" *ngIf="auth.loggedIn">
+  Welcome {{ username }}
+</div>
+
+<div class="menu-item menu-clickable" *ngIf="auth.loggedIn">
   <div ngbDropdown>
     <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="myAccountDropdown" role="button"
        placement="bottom" ngbTooltip="Account">
@@ -45,14 +46,14 @@
 
       <div class="dropdown-divider"></div>
 
-      <a ngbDropdownItem routerLink="debug/token">
+      <a ngbDropdownItem routerLink="/debug/token">
         <div class="item-icon"><i class="fas fa-debug"></i></div>
         <div class="item-label">OAuth Debug</div>
       </a>
 
       <div class="dropdown-divider"></div>
 
-      <a ngbDropdownItem href="#" (click)="auth.login()" *ngIf="!auth.loggedIn">
+      <a ngbDropdownItem href="#" (click)="auth.login('/menu')" *ngIf="!auth.loggedIn">
         <div class="item-icon"><i class="fas fa-sign-in"></i></div>
         <div class="item-label">Log In</div>
       </a>

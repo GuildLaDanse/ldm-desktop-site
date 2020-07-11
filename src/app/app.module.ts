@@ -1,47 +1,37 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MenuTileComponent } from './modules/menu/menu-tile/menu-tile.component';
-import { TopNavigationBarComponent } from './layout/top-nav-bar/top-navigation-bar.component';
-import { NavigationMenuComponent } from './layout/top-nav-bar/nav-menu/navigation-menu.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from './pages/home/home.component';
-import { MenuPageComponent } from './modules/menu/menu-page/menu-page.component';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { HttpClientModule } from '@angular/common/http';
-import { DebugModule } from './modules/debug/debug.module';
-import { MenuNewsComponent } from './modules/menu/menu-news/menu-news.component';
-import { MenuColumnComponent } from './modules/menu/menu-column/menu-column.component';
-import { MenuTileIconContentComponent } from './modules/menu/menu-tile-icon-content/menu-tile-icon-content.component';
-import { MenuTileImageContentComponent } from './modules/menu/menu-tile-image-content/menu-tile-image-content.component';
+import {AppRoutingModule} from './app-routing.module';
+import {DebugModule} from './modules/debug/debug.module';
+import {DesktopModule} from './desktop/desktop.module';
+import {MenuModule} from './modules/menu/menu.module';
+
+import {AppComponent} from './app.component';
+import {HomeComponent} from './pages/home/home.component';
+import {AboutComponent} from './pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuTileComponent,
-    TopNavigationBarComponent,
-    NavigationMenuComponent,
     HomeComponent,
-    MenuPageComponent,
-    WelcomeComponent,
-    MenuNewsComponent,
-    MenuColumnComponent,
-    MenuTileIconContentComponent,
-    MenuTileImageContentComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule,
     FontAwesomeModule,
-    DebugModule
+    NgbModule,
+    DebugModule,
+    DesktopModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

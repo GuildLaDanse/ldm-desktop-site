@@ -10,6 +10,10 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
+
+  private authStateSubject$ = new BehaviorSubject<boolean>(null);
+  authState$ = this.authStateSubject$.asObservable();
+
   // Create an observable of Auth0 instance of client
   auth0Client$ = (from(
     createAuth0Client({
@@ -28,7 +32,10 @@ export class AuthService {
   // from: Convert that resulting promise into an observable
   isAuthenticated$ = this.auth0Client$.pipe(
     concatMap((client: Auth0Client) => from(client.isAuthenticated())),
-    tap(res => this.loggedIn = res)
+    tap(res => {
+      this.loggedIn = res;
+      this.authStateSubject$.next(this.loggedIn);
+    })
   );
   handleRedirectCallback$ = this.auth0Client$.pipe(
     concatMap((client: Auth0Client) => from(client.handleRedirectCallback()))
@@ -85,6 +92,7 @@ export class AuthService {
     // Ensure Auth0 client instance exists
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log in
+      // noinspection JSIgnoredPromiseFromCall
       client.loginWithRedirect({
         redirect_uri: `${window.location.origin}`,
         appState: { target: redirectPath }
@@ -96,7 +104,7 @@ export class AuthService {
     // Call when app reloads after user logs in with Auth0
     const params = window.location.search;
     if (params.includes('code=') && params.includes('state=')) {
-      let targetRoute: string; // Path to redirect to after login processsed
+      let targetRoute: string; // Path to redirect to after login processed
       const authComplete$ = this.handleRedirectCallback$.pipe(
         // Have client, now call method to handle auth callback redirect
         tap(cbRes => {
@@ -115,6 +123,8 @@ export class AuthService {
       // Response will be an array of user and login status
       authComplete$.subscribe(([user, loggedIn]) => {
         // Redirect to target route after callback processing
+        console.log('(AuthService) redirecting user to ' + targetRoute);
+        // noinspection JSIgnoredPromiseFromCall
         this.router.navigate([targetRoute]);
       });
     }

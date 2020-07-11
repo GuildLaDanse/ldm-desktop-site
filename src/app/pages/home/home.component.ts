@@ -1,39 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth/auth.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
-  isAuthenticated: boolean = null;
+  public loggedIn: boolean = null;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  private authStateSubscription;
+
+  constructor(public auth: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
-
-    this.auth.isAuthenticated$.subscribe(
-      res => {
-        if (res !== this.isAuthenticated) {
-          this.isAuthenticated = res as boolean;
-          this.redirectOnAuthenticationChange();
-        }
-      }
+    this.authStateSubscription = this.auth.authState$.subscribe(
+      authState => this.handleAuthenticationChange(authState)
     );
   }
 
-  redirectOnAuthenticationChange(): void {
-    if (this.isAuthenticated) {
-      console.log('is logged in');
+  ngOnDestroy(): void {
+    if (this.authStateSubscription) { this.authStateSubscription.unsubscribe(); }
+  }
+
+  async handleAuthenticationChange(authState: boolean): Promise<any> {
+
+    if (authState === null) { return; }
+
+    this.loggedIn = authState;
+
+    console.log('(HomeComponent) this.auth.loggedIn - ' + this.auth.loggedIn);
+    if (this.auth.loggedIn) {
+      console.log('(HomeComponent) is logged in, redirecting to /menu');
+
+      if (this.authStateSubscription) { this.authStateSubscription.unsubscribe(); }
+
+      const that = this;
+
       // noinspection JSIgnoredPromiseFromCall
-      this.router.navigate(['./menu']);
+      setTimeout(() => that.router.navigate(['/menu']), 50);
     } else {
-      console.log('is not logged in');
-      // noinspection JSIgnoredPromiseFromCall
-      this.router.navigate(['./welcome']);
+      console.log('(HomeComponent) is not logged in, staying on current page');
     }
   }
 }

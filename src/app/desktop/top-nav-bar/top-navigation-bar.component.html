@@ -4,14 +4,14 @@
 
         <!-- Guild Logo -->
         <div class="guild-logo-container">
-          <a routerLink="/">
-            <img class="guild-logo-image" src="/assets/images/GuildLogo.png" />
+          <a [routerLink]="logoNavigationTarget()">
+            <img class="guild-logo-image" src="/assets/images/desktop/navigation/GuildLogo.png"  alt="Guild Logo"/>
           </a>
         </div>
 
         <!-- Guild Name -->
         <div class="guild-name-container">
-            <a routerLink="/" class="inherit-link">La Danse Macabre</a>
+            <a [routerLink]="logoNavigationTarget()" href="" class="inherit-link">La Danse Macabre</a>
         </div>
 
         <!-- Horizontal Menu -->

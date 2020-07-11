@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import { AuthService } from '../../../services/auth/auth.service';
 
@@ -7,16 +7,22 @@ import { AuthService } from '../../../services/auth/auth.service';
   templateUrl: './navigation-menu.component.html',
   styleUrls: ['./navigation-menu.component.scss']
 })
-export class NavigationMenuComponent implements OnInit {
+export class NavigationMenuComponent implements OnInit, OnDestroy {
 
-  username = '<test>';
+  private authStateSubscription;
+
+  public username = null;
 
   constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
-    this.auth.isAuthenticated$.subscribe(
-      res => this.updateMenu(res as boolean)
+    this.auth.authState$.subscribe(
+      authState => this.updateMenu(authState)
     );
+  }
+
+  ngOnDestroy(): void {
+    this.authStateSubscription.unsubscribe();
   }
 
   updateMenu(isAuthenticated: boolean) {
