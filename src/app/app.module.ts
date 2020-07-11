@@ -10,8 +10,6 @@ import { TopNavigationBarComponent } from './layout/top-nav-bar/top-navigation-b
 import { NavigationMenuComponent } from './layout/top-nav-bar/nav-menu/navigation-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './pages/home/home.component';
-import { NavigationMenuLinkComponent } from './layout/top-nav-bar/nav-menu/menu-link/navigation-menu-link.component';
-import { NavigationMyAccountComponent } from './layout/top-nav-bar/nav-menu/my-account/navigation-my-account.component';
 import { MenuPageComponent } from './modules/menu/menu-page/menu-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,8 +26,6 @@ import { MenuTileImageContentComponent } from './modules/menu/menu-tile-image-co
     TopNavigationBarComponent,
     NavigationMenuComponent,
     HomeComponent,
-    NavigationMenuLinkComponent,
-    NavigationMyAccountComponent,
     MenuPageComponent,
     WelcomeComponent,
     MenuNewsComponent,

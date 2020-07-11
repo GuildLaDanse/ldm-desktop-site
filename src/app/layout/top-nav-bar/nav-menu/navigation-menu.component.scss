@@ -9,3 +9,46 @@ div.menu-item {
 div.menu-item:first-child {
   margin-left: 0;
 }
+
+div.my-account-container {
+  position: relative;
+}
+
+div.my-account-dropdown-container {
+  margin-top: 15px;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: rgb(234,241,217);
+  top: 20px;
+  right: 0px;
+}
+
+span.menu-link {
+  color: white;
+  font-size: 1.0em;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+span.menu-link:first-child {
+  margin-left: 0;
+}
+
+.menu-toggle-icon {
+  color: lightgray;
+}
+
+.item-icon
+{
+  width: 25px;
+  display: inline-block;
+  font-size: 0.85em;
+}
+
+.item-label
+{
+  display: inline-block;
+  font-size: 0.85em;
+}
+

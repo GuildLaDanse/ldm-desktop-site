@@ -1,7 +1,66 @@
 <div class="menu-item">
-  Welcome Leto
+  <span *ngIf="auth.loggedIn">
+    Welcome {{ username }}
+  </span>
+
 </div>
 
 <div class="menu-item">
-  <app-navigation-my-account></app-navigation-my-account>
+  <div ngbDropdown>
+    <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="myAccountDropdown" role="button"
+       placement="bottom" ngbTooltip="Account">
+      <i class="fas fa-user-cog"></i>
+    </a>
+    <div ngbDropdownMenu aria-labelledby="myAccountDropdown" class="dropdown-menu">
+
+      <a ngbDropdownItem href="#" (click)="$event.preventDefault()">
+        <div class="item-icon"><i class="far fa-id-card-alt"></i></div>
+        <div class="item-label">Profile</div>
+      </a>
+
+      <a ngbDropdownItem href="#" (click)="$event.preventDefault()">
+        <div class="item-icon"><i class="fal fa-key"></i></div>
+        <div class="item-label">Password</div>
+      </a>
+
+      <a ngbDropdownItem href="#" (click)="$event.preventDefault()">
+        <div class="item-icon"><i class="far fa-calendar-alt"></i></div>
+        <div class="item-label">Calendar</div>
+      </a>
+
+      <a ngbDropdownItem href="#" (click)="$event.preventDefault()">
+        <div class="item-icon"><i class="fal fa-bell"></i></div>
+        <div class="item-label">Notifications</div>
+      </a>
+
+      <a ngbDropdownItem href="#" (click)="$event.preventDefault()">
+        <div class="item-icon"><i class="fas fa-link"></i></div>
+        <div class="item-label">Battle.net</div>
+      </a>
+
+      <a ngbDropdownItem href="#" (click)="$event.preventDefault()">
+        <div class="item-icon"><i class="fas fa-link"></i></div>
+        <div class="item-label">Discord</div>
+      </a>
+
+      <div class="dropdown-divider"></div>
+
+      <a ngbDropdownItem routerLink="debug/token">
+        <div class="item-icon"><i class="fas fa-debug"></i></div>
+        <div class="item-label">OAuth Debug</div>
+      </a>
+
+      <div class="dropdown-divider"></div>
+
+      <a ngbDropdownItem href="#" (click)="auth.login()" *ngIf="!auth.loggedIn">
+        <div class="item-icon"><i class="fas fa-sign-in"></i></div>
+        <div class="item-label">Log In</div>
+      </a>
+      <a ngbDropdownItem href="#" (click)="auth.logout()" *ngIf="auth.loggedIn">
+        <div class="item-icon"><i class="fas fa-sign-out"></i></div>
+        <div class="item-label">Log Out</div>
+      </a>
+
+    </div>
+  </div>
 </div>
