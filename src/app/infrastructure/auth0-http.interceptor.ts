@@ -5,7 +5,7 @@ import {Observable, throwError} from 'rxjs';
 import {catchError, mergeMap} from 'rxjs/operators';
 
 import {environment} from '../../environments/environment';
-import {Logger} from './logger';
+import {LoggingFunctions} from './logging.functions';
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +20,15 @@ export class Auth0HttpInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
 
-    Logger.debug('Auth0HttpInterceptor', 'intercept', 'intercepting request');
-    Logger.debug('Auth0HttpInterceptor', 'intercept', req);
+    LoggingFunctions.debug('Auth0HttpInterceptor', 'intercept', 'intercepting request');
+    LoggingFunctions.debug('Auth0HttpInterceptor', 'intercept', req);
 
     if (!req.url.startsWith(environment.api.baseUrl)) {
-      Logger.debug('Auth0HttpInterceptor', 'intercept', 'request does not match REST API baseUrl, skipping');
+      LoggingFunctions.debug('Auth0HttpInterceptor', 'intercept', 'request does not match REST API baseUrl, skipping');
       return next.handle(req);
     }
 
-    Logger.debug('Auth0HttpInterceptor', 'intercept', 'request matches REST API baseUrl');
+    LoggingFunctions.debug('Auth0HttpInterceptor', 'intercept', 'request matches REST API baseUrl');
 
     const auth = this.injector.get(AuthService);
 

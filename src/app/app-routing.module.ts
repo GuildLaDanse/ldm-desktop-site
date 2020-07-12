@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './pages/home/home.component';
 import {MenuPageComponent} from './modules/menu/menu-page/menu-page.component';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
-import {Auth0HttpInterceptor} from './infrastructure/auth0-http-interceptor';
+import {Auth0HttpInterceptor} from './infrastructure/auth0-http.interceptor';
 import {AboutComponent} from './pages/about/about.component';
 import {AuthGuardService as AuthGuard} from './infrastructure/auth-guard/auth-guard.service';
 

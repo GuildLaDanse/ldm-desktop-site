@@ -12,7 +12,7 @@ import {environment} from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class Logger {
+export class LoggingFunctions {
 
   /**
    * Logs a consistent debug message format to the console.

@@ -5,7 +5,7 @@ import {BehaviorSubject, combineLatest, from, Observable, of, throwError} from '
 import {catchError, concatMap, shareReplay, tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {environment} from '../../../environments/environment';
-import {Logger} from '../../infrastructure/logger';
+import {LoggingFunctions} from '../../infrastructure/logging.functions';
 
 @Injectable({
   providedIn: 'root'
@@ -124,7 +124,7 @@ export class AuthService {
       // Response will be an array of user and login status
       authComplete$.subscribe(([user, loggedIn]) => {
         // Redirect to target route after callback processing
-        Logger.debug('AuthService', 'handleAuthCallback', 'login finished, routing to ' + targetRoute);
+        LoggingFunctions.debug('AuthService', 'handleAuthCallback', 'login finished, routing to ' + targetRoute);
 
         // noinspection JSIgnoredPromiseFromCall
         this.router.navigate([targetRoute]);
