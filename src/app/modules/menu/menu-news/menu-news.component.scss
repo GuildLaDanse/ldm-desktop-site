@@ -6,7 +6,7 @@ div.menu-news {
 div.menu-news p.news-item {
   font-family: 'Segoe UI', 'Open Sans', sans-serif, serif;
   font-size: 18px;
-  color: black;
+  color: var(--default-color);
   font-weight: 300;
   padding-bottom: 15px;
 }
@@ -14,7 +14,7 @@ div.menu-news p.news-item {
 div.menu-news p.news-title {
   font-family: 'Segoe UI', 'Open Sans', sans-serif, serif;
   font-size: 30px;
-  color: black;
+  color: var(--default-color);
   font-weight: bold;
 }
 
@@ -25,5 +25,5 @@ div.menu-news p span.news-timestamp {
 }
 
 div.menu-news p a {
-  color: black;
+  color: var(--default-color);
 }

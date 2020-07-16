@@ -13,18 +13,28 @@ div.my-account-container {
   position: relative;
 }
 
-div.my-account-dropdown-container {
-  margin-top: 15px;
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  background-color: rgb(234, 241, 217);
-  top: 20px;
-  right: 0px;
+.dropdown-menu
+{
+  background-color: var(--content-background);
+}
+
+/* Dropdown menu font color*/
+
+.dropdown-menu a,
+.dropdown-menu a:hover,
+.dropdown-menu a:focus
+{
+  color: var(--default-color) !important;
+}
+
+.dropdown-menu a:hover
+{
+  background-color: var(--focus-background);
+  color: var(--default-color) !important;
 }
 
 span.menu-link {
-  color: white;
+  color: var(--default-color);
   font-size: 1.0em;
   margin-left: 25px;
   cursor: pointer;

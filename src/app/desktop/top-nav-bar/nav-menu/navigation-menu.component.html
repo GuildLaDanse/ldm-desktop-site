@@ -46,6 +46,16 @@
 
       <div class="dropdown-divider"></div>
 
+      <a ngbDropdownItem *ngIf="!themeService.isDarkTheme()" (click)="themeService.setDarkTheme()">
+        <div class="item-icon"><i class="far fa-palette"></i></div>
+        <div class="item-label">Set Dark Theme</div>
+      </a>
+
+      <a ngbDropdownItem *ngIf="themeService.isDarkTheme()" (click)="themeService.setLightTheme()">
+        <div class="item-icon"><i class="far fa-palette"></i></div>
+        <div class="item-label">Set Light Theme</div>
+      </a>
+
       <a ngbDropdownItem routerLink="/debug/token">
         <div class="item-icon"><i class="fas fa-debug"></i></div>
         <div class="item-label">OAuth Debug</div>

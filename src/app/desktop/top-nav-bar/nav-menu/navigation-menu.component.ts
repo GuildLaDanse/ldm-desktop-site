@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import {AuthService} from '../../../services/auth/auth.service';
+import {ThemeService} from '../../../services/theme/theme.service';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -13,7 +14,7 @@ export class NavigationMenuComponent implements OnInit, OnDestroy {
 
   public username = null;
 
-  constructor(public auth: AuthService) {
+  constructor(public auth: AuthService, public themeService: ThemeService) {
   }
 
   ngOnInit(): void {
@@ -24,6 +25,10 @@ export class NavigationMenuComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.authStateSubscription.unsubscribe();
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 
   updateMenu(isAuthenticated: boolean) {
