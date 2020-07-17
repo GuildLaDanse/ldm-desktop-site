@@ -30,14 +30,14 @@ export const dark: Theme = {
   properties: {
     '--main-background': '     \
     linear-gradient(           \
-      rgba(26, 26, 26, 0.85),  \
-      rgba(26, 26, 26, 0.85)   \
+      rgba(26, 26, 26, 0.8  ),  \
+      rgba(26, 26, 26, 0.8)   \
     ),                         \
     url(\'/assets/images/wallpapers/background.jpg\')',
 
     '--default-color': 'rgb(240, 240, 240)',
 
-    '--nav-background': 'rgba(18, 18, 20, 0.8)',
+    '--nav-background': 'rgba(25, 25, 25, 0.8)',
     '--default-background': 'rgb(18, 18, 20)',
     '--content-background': 'rgb(21, 21, 24)',
     '--focus-background': 'rgb(35, 35, 35)',

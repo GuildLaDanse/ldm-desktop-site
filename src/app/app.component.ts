@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'ldm-desktop-site';
 
   constructor(private themeService: ThemeService) {
-    this.themeService.setDarkTheme();
+    this.themeService.initTheme();
   }
 }
