@@ -67,7 +67,7 @@
         <div class="item-icon"><i class="fas fa-sign-in"></i></div>
         <div class="item-label">Log In</div>
       </a>
-      <a ngbDropdownItem href="#" (click)="auth.logout()" *ngIf="auth.loggedIn">
+      <a ngbDropdownItem href="#" (click)="logout($event)" *ngIf="auth.loggedIn">
         <div class="item-icon"><i class="fas fa-sign-out"></i></div>
         <div class="item-label">Log Out</div>
       </a>

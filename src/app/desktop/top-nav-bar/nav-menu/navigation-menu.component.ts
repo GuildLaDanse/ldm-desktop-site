@@ -27,8 +27,10 @@ export class NavigationMenuComponent implements OnInit, OnDestroy {
     this.authStateSubscription.unsubscribe();
   }
 
-  toggleTheme() {
-    this.themeService.toggleTheme();
+  logout(e) {
+    e.preventDefault();
+
+    this.auth.logout();
   }
 
   updateMenu(isAuthenticated: boolean) {
