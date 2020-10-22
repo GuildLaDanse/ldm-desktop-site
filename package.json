@@ -22,7 +22,7 @@
     "@angular/router": "^10.1.1",
     "@auth0/auth0-spa-js": "^1.12.1",
     "@fortawesome/angular-fontawesome": "^0.7.0",
-    "@fortawesome/fontawesome-free": "^5.14.0",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "@fortawesome/fontawesome-common-types": "^0.2.30",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
