@@ -6,11 +6,12 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {Auth0HttpInterceptor} from './infrastructure/auth0-http.interceptor';
 import {AboutComponent} from './pages/about/about.component';
 import {AuthGuardService as AuthGuard} from './infrastructure/auth-guard/auth-guard.service';
+import {EventDetailComponent} from './modules/events/components/event-detail/event-detail.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'menu', component: MenuPageComponent, canActivate: [AuthGuard]},
-  {path: 'about', component: AboutComponent},
+  {path: 'about', component: AboutComponent}
 ];
 
 @NgModule({

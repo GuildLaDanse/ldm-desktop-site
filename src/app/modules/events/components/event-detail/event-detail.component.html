@@ -1,0 +1,6 @@
+<h2>Event</h2>
+
+<input [(ngModel)]="eventId">
+<button (click)="loadEventClicked()">Load Event</button>
+
+<pre [innerHTML]="event | json"></pre>

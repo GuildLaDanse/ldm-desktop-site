@@ -1,0 +1,11 @@
+<div class="centered-page">
+
+  <p>calendar-page works!</p>
+
+  <a routerLink="12345">Click me</a>
+
+    <p *ngFor="let event of events">
+      <a [routerLink]="[event.id]">{{ event.name }}</a>
+    </p>
+
+</div>

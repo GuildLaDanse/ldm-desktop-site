@@ -9,11 +9,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {DebugModule} from './modules/debug/debug.module';
 import {DesktopModule} from './desktop/desktop.module';
 import {MenuModule} from './modules/menu/menu.module';
+import {EventsModule} from './modules/events/events.module';
+
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './pages/home/home.component';
 import {AboutComponent} from './pages/about/about.component';
 import {CookieService} from 'ngx-cookie-service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,13 @@ import {CookieService} from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     FontAwesomeModule,
     NgbModule,
     DebugModule,
     DesktopModule,
-    MenuModule
+    MenuModule,
+    EventsModule
   ],
   providers: [
     CookieService

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    baseUrl: 'http://localhost:8000'
+    baseUrl: 'http://localhost:5000/api'
   },
   auth0: {
     domain: 'ladanse.eu.auth0.com',
