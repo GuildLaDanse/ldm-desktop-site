@@ -10,9 +10,11 @@ export class WeekModel {
   private readonly days: Array<DayModel>;
 
   constructor(firstDay: Moment, raidWeekModel: RaidWeekModel) {
-    this.firstDay = firstDay;
+    this.firstDay = firstDay.clone();
     this.raidWeekModel = raidWeekModel;
     this.days = new Array<DayModel>();
+
+    console.log('WeekModel - ' + this.firstDay.format('yyyy-MM-DD'));
 
     for (let firstDateDelta = 0; firstDateDelta < 7; firstDateDelta++)
     {
@@ -39,16 +41,18 @@ export class WeekModel {
     const lastDate = moment(this.firstDay.clone());
     lastDate.add(6, 'day');
 
-    return (this.firstDay.isSame(day, 'day')
+    return (day.isBetween(this.firstDay, lastDate, 'day')
+        // since .isBetween() is not inclusive we have to check that separately
       || lastDate.isSame(day, 'day')
-      || day.isBetween(this.firstDay, lastDate, 'day')
+      || this.firstDay.isSame(day, 'day')
     );
   }
 
   public addEvent(event: any) {
+    console.log('adding to event');
     for (const currentDay of this.days)
     {
-      if (event.inviteTime.isSame(currentDay.getDay(), 'day'))
+      if (moment(event.inviteTime).isSame(currentDay.getDay(), 'day'))
       {
         currentDay.addEvent(event);
       }

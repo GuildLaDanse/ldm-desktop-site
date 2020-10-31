@@ -10,8 +10,9 @@ export class CalendarMonthModel {
   private readonly weeks: Array<WeekModel>;
 
   private static calculateFirstDay(showDay: Moment, raidWeekModel: RaidWeekModel): Moment {
+    const firstDay = showDay.clone().isoWeekday(1);
 
-    const firstDay = moment(showDay).clone().isoWeekday(1);
+    console.log(firstDay.format('yyyy-MM-DD'));
 
     if (raidWeekModel.isInRaidWeek(firstDay))
     {
@@ -40,6 +41,8 @@ export class CalendarMonthModel {
     this.raidWeekModel = raidWeekModel;
     this.weeks = new Array<WeekModel>();
 
+    console.log('CalendarMonthModel - ' + this.firstDay.format('yyyy-MM-DD'));
+
     const firstWeekDate = this.firstDay.clone();
 
     for (let i = 0; i < 4; i++)
@@ -62,12 +65,20 @@ export class CalendarMonthModel {
     return this.weeks;
   }
 
+  public getStartOfPreviousMonth(): Moment {
+    return this.firstDay.clone().add(-28, 'day');
+  }
+
+  public getStartOfNextMonth(): Moment {
+    return this.firstDay.clone().add(28, 'day');
+  }
+
   public populateEvents(events: Array<any>) {
     for (const currentEvent of events)
     {
       for (const currentWeek of this.weeks)
       {
-        if (currentWeek.isInWeek(currentEvent.inviteTime))
+        if (currentWeek.isInWeek(moment(currentEvent.inviteTime)))
         {
           currentWeek.addEvent(currentEvent);
         }
