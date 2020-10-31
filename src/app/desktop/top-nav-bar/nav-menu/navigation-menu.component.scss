@@ -1,5 +1,5 @@
 div.menu-item {
-  color: white;
+  color: var(--default-color);
   font-size: 1.0em;
   height: 100%;
   display: inline-block;
@@ -16,6 +16,13 @@ div.my-account-container {
 .dropdown-menu
 {
   background-color: var(--content-background);
+}
+
+a,
+a:hover,
+a:focus
+{
+  color: var(--default-color) !important;
 }
 
 /* Dropdown menu font color*/
