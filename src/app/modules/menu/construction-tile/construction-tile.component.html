@@ -1,0 +1,30 @@
+<li class="tile"
+    [class.tile-single]="size == 'single'"
+    [class.tile-wide]="size == 'wide'">
+
+  <div class="construction-overlay"
+       [class.tile-single]="size == 'single'"
+       [class.tile-wide]="size == 'wide'">
+    <img src="assets/images/shared/under-construction.gif" alt="under construction"/>
+  </div>
+
+  <div class="tile-content">
+    <ng-content></ng-content>
+  </div>
+
+  <div *ngIf="icon == null"
+       class="tile-label tile-text-label">
+
+    <span *ngIf="icon == null">{{ label }}</span>
+
+  </div>
+
+  <div *ngIf="icon != null"
+       class="tile-label tile-icon-label">
+
+    <i *ngIf="icon != null"
+       class="{{ cssIconStyle() }} {{ icon }} fa-2x"></i>
+
+  </div>
+
+</li>

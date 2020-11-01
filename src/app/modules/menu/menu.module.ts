@@ -7,6 +7,7 @@ import {MenuTileImageContentComponent} from './menu-tile-image-content/menu-tile
 import {MenuTileComponent} from './menu-tile/menu-tile.component';
 import {MenuPageComponent} from './menu-page/menu-page.component';
 import {RouterModule} from '@angular/router';
+import {ConstructionTileComponent} from './construction-tile/construction-tile.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {RouterModule} from '@angular/router';
     MenuTileIconContentComponent,
     MenuTileImageContentComponent,
     MenuTileComponent,
+    ConstructionTileComponent,
     MenuPageComponent
   ],
   imports: [
