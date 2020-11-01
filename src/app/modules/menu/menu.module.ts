@@ -8,6 +8,8 @@ import {MenuTileComponent} from './menu-tile/menu-tile.component';
 import {MenuPageComponent} from './menu-page/menu-page.component';
 import {RouterModule} from '@angular/router';
 import {ConstructionTileComponent} from './construction-tile/construction-tile.component';
+import {EventTileContentComponent} from './event-tile-content/event-tile-content.component';
+import {MomentModule} from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import {ConstructionTileComponent} from './construction-tile/construction-tile.c
     MenuColumnComponent,
     MenuTileIconContentComponent,
     MenuTileImageContentComponent,
+    EventTileContentComponent,
     MenuTileComponent,
     ConstructionTileComponent,
     MenuPageComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MomentModule
   ],
   exports: []
 })

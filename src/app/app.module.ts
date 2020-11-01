@@ -17,6 +17,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {AboutComponent} from './pages/about/about.component';
 import {CookieService} from 'ngx-cookie-service';
 import {FormsModule} from '@angular/forms';
+import {MomentModule} from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    MomentModule,
     NgbModule,
     DebugModule,
     DesktopModule,
