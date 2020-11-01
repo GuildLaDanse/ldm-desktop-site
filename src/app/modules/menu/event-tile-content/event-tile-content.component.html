@@ -1,0 +1,13 @@
+<div class="tile-content-container">
+
+  <div *ngIf="!eventsPopulated" class="spinner-container">
+    <img src="assets/images/shared/waiting-spin.gif" alt="waiting spinner"/>
+  </div>
+
+  <div *ngIf="eventsPopulated">
+    <div *ngFor="let event of events | slice:0:3; let i=index"
+         class="event-container">
+      <a [routerLink]="['/events', event.id]">{{ event.inviteTime | amDateFormat:'ddd DD/MM HH:mm' }} - {{ event.name }}</a>
+    </div>
+  </div>
+</div>

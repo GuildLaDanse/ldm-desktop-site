@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Location} from '@angular/common';
 import {Moment} from 'moment';
 import * as moment from 'moment';
 import {RaidWeekModel} from '../../models/RaidWeekModel';
@@ -26,6 +27,7 @@ export class CalendarPageComponent implements OnInit {
   public events: Array<any> = null;
 
   constructor(
+    private location: Location,
     private route: ActivatedRoute,
     private http: HttpClient) { }
 
@@ -52,6 +54,11 @@ export class CalendarPageComponent implements OnInit {
   initCalendar(showDate: Moment): void {
     this.showDate = showDate;
 
+    this.location.replaceState(
+      '/events',
+      'showDate=' + this.showDate.format(this.SHOW_DATE_FORMAT)
+    );
+
     this.currentRaidWeek = new RaidWeekModel(moment());
     this.calendarMonth = new CalendarMonthModel(this.showDate, this.currentRaidWeek);
 
@@ -69,7 +76,6 @@ export class CalendarPageComponent implements OnInit {
 
     this.calendarMonth.populateEvents(this.events);
 
-    //this.readyToRenderCalendar = true;
     this.eventsPopulated = true;
   }
 }

@@ -74,6 +74,7 @@ export class CalendarMonthModel {
   }
 
   public populateEvents(events: Array<any>) {
+    this.resetEvents();
     for (const currentEvent of events)
     {
       for (const currentWeek of this.weeks)
@@ -83,6 +84,13 @@ export class CalendarMonthModel {
           currentWeek.addEvent(currentEvent);
         }
       }
+    }
+  }
+
+  private resetEvents(): void {
+    for (const currentWeek of this.weeks)
+    {
+      currentWeek.resetEvents();
     }
   }
 }

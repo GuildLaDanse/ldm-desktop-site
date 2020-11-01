@@ -1,6 +1,6 @@
 .tile {
   margin: 10px;
-  text-align: center;
+  ttext-align: center;
   background-color: var(--menu-tile-background);
   color: rgb(250, 250, 250);
   position: relative;
@@ -25,9 +25,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .tile-label {

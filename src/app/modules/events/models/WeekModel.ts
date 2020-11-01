@@ -49,13 +49,19 @@ export class WeekModel {
   }
 
   public addEvent(event: any) {
-    console.log('adding to event');
     for (const currentDay of this.days)
     {
       if (moment(event.inviteTime).isSame(currentDay.getDay(), 'day'))
       {
         currentDay.addEvent(event);
       }
+    }
+  }
+
+  public resetEvents(): void {
+    for (const currentDay of this.days)
+    {
+      currentDay.resetEvents();
     }
   }
 }

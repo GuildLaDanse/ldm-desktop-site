@@ -7,7 +7,7 @@ export class DayModel {
 
   private readonly day: Moment;
   private readonly raidWeekModel: RaidWeekModel;
-  private readonly events: Array<any>;
+  private events: Array<any>;
   private showMonth: boolean;
 
   constructor(day: Moment, raidWeekModel: RaidWeekModel) {
@@ -55,5 +55,9 @@ export class DayModel {
 
   public addEvent(event: any) {
     this.events.push(event);
+  }
+
+  public resetEvents(): void {
+    this.events = new Array<any>();
   }
 }

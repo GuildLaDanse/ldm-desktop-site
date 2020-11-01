@@ -1,3 +1,15 @@
-.tile-image {
-  max-width: 100px;
+div.image-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  img.tile-image
+  {
+    max-width: 100px;
+  }
 }
+
+
