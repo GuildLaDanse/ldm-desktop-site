@@ -1,6 +1,6 @@
 <div class="centered-page">
 
-  <div *ngIf="readyToRender">
+  <div>
 
     <div class="pager">
       <div><a (click)="olderButtonClicked()" [routerLink]=""><i class="fa fa-arrow-left fa-1x"></i> older</a></div>
@@ -45,11 +45,17 @@
             </div>
           </div>
 
-          <div *ngFor="let event of calendarDay.getEvents()"
-               [routerLink]="[event.id]"
-               [ngClass]="{'event-cancelled': event.state == 'Cancelled'}"
-               class="event-container event-willCome">
-            {{ event.name }}
+          <div *ngIf="!eventsPopulated" class="spinner-container">
+            <img src="assets/images/shared/waiting-spin.gif" width="30" />
+          </div>
+
+          <div *ngIf="eventsPopulated">
+            <div *ngFor="let event of calendarDay.getEvents()"
+              [routerLink]="[event.id]"
+              [ngClass]="{'event-cancelled': event.state == 'Cancelled'}"
+              class="event-container event-willCome">
+              {{ event.name }}
+            </div>
           </div>
 
       </div>

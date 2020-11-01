@@ -15,7 +15,8 @@ export class CalendarPageComponent implements OnInit {
 
   private readonly SHOW_DATE_FORMAT = 'YYYYMMDD';
 
-  public readyToRender = false;
+  public readyToRenderCalendar = true;
+  public eventsPopulated = false;
 
   private showDate: Moment;
 
@@ -49,7 +50,6 @@ export class CalendarPageComponent implements OnInit {
   }
 
   initCalendar(showDate: Moment): void {
-    this.readyToRender = false;
     this.showDate = showDate;
 
     this.currentRaidWeek = new RaidWeekModel(moment());
@@ -59,6 +59,7 @@ export class CalendarPageComponent implements OnInit {
   }
 
   getEvents(fromDate: Moment) {
+    this.eventsPopulated = false;
     this.http.get('http://localhost:5000/api/events?fromDate=' + fromDate.format(this.SHOW_DATE_FORMAT))
       .subscribe((data: Array<any>) => this.populateEvents(data));
   }
@@ -68,6 +69,7 @@ export class CalendarPageComponent implements OnInit {
 
     this.calendarMonth.populateEvents(this.events);
 
-    this.readyToRender = true;
+    //this.readyToRenderCalendar = true;
+    this.eventsPopulated = true;
   }
 }
