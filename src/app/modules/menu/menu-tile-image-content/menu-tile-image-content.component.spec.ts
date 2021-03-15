@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {MenuTileImageContentComponent} from './menu-tile-image-content.component';
 
@@ -6,7 +6,7 @@ describe('MenuTileImageContentComponent', () => {
   let component: MenuTileImageContentComponent;
   let fixture: ComponentFixture<MenuTileImageContentComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [MenuTileImageContentComponent]
     })

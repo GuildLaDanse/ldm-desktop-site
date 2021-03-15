@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: false, useHash: false})],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false, useHash: false, relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
   providers: [{
     provide: HTTP_INTERCEPTORS,
